@@ -224,18 +224,14 @@ def eight(string, num):
         return ""
     if len(string)%2 != 0:
         middle = (len(string)//2) 
-        print(middle, " middle" )
         if num > 1:
             edge = num//2
             for i in range(edge):
                 replace = replace + string[middle-(edge-i)]
-                print("below mid", replace)
             replace = replace + string[middle]
             for i in range(edge):
                 replace = replace + string[middle+(edge-i)]
-                print("above mid", replace)
             string = string.replace(replace,"")
-            print(string)
         else:
             strlist = list(string)
             strlist[middle] = ""
@@ -267,8 +263,6 @@ def nine(string1, string2):
         string2 = hold
     for i in string1:
         for x in range(len(string2)):
-            print("curr", i)
-            print("curr2", string2[x])
             if i == string2[x]:
                 match +=1
                 string2[x] = ""
@@ -278,7 +272,6 @@ def nine(string1, string2):
     else:
         return False
     # make sure string1 is the shortest of the two
-    return
 
     # <QUESTION 10>
 
