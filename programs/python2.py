@@ -219,7 +219,28 @@ def seven(a, b, c):
 
 
 def eight(string, num):
-    return
+    replace = ""
+    if num == len(string):
+        return ""
+    if len(string)%2 != 0:
+        middle = (len(string)//2) 
+        print(middle, " middle" )
+        if num > 1:
+            edge = num//2
+            for i in range(edge):
+                replace = replace + string[middle-(edge-i)]
+                print("below mid", replace)
+            replace = replace + string[middle]
+            for i in range(edge):
+                replace = replace + string[middle+(edge-i)]
+                print("above mid", replace)
+            string = string.replace(replace,"")
+            print(string)
+        else:
+            strlist = list(string)
+            strlist[middle] = ""
+            string = "".join(strlist)
+    return string
 
     # <QUESTION 9>
 
@@ -237,6 +258,25 @@ def eight(string, num):
 
 
 def nine(string1, string2):
+    match = 0
+    string1 = sorted(string1)
+    string2 = sorted(string2)
+    if len(string2) < len(string1):
+        hold = string1
+        string1 = string2
+        string2 = hold
+    for i in string1:
+        for x in range(len(string2)):
+            print("curr", i)
+            print("curr2", string2[x])
+            if i == string2[x]:
+                match +=1
+                string2[x] = ""
+                break
+    if match == len(string1):
+        return True
+    else:
+        return False
     # make sure string1 is the shortest of the two
     return
 
@@ -254,7 +294,13 @@ def nine(string1, string2):
 
     # <HINT>
     # Think about nesting for loops.
-
+ 
 
 def ten(a, b):
-    return
+    arr2 = []
+    for i in range(b):
+        templist=[]
+        for x in range(a):
+            templist.append((i*x))
+        arr2.append(templist)
+    return arr2
