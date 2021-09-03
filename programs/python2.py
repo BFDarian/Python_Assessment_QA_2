@@ -32,7 +32,11 @@ import random
 
 
 def one(string):
-    return
+    word = ""
+    for i in string:
+        for x in range(3):
+            word = word + i
+    return word
 
     # <QUESTION 2>
 
@@ -51,7 +55,14 @@ def one(string):
 
 
 def two(num):
-    return
+    if num == 1:
+        return True
+    else:
+        for i in range(2,num//2):
+            if (num%i)== 0:
+                return False
+        else:
+            return True
 
     # <QUESTION 3>
 
@@ -69,7 +80,13 @@ def two(num):
 
 
 def three(a):
-    return
+    total = 0
+    numString = str(a)
+    for i in range(4):
+        total = total + int(numString)
+        numString = numString+str(a)
+
+    return total
 
     # <QUESTION 4>
 
@@ -99,7 +116,11 @@ def three(a):
 
 
 def four(string1, string2):
-    return
+    merged = ""
+    for i in range(len(string1)):
+        merged = merged+string1[i]+string2[i]
+
+    return merged
 
     # <QUESTION 5>
 
@@ -117,7 +138,15 @@ def four(string1, string2):
 
 
 def five():
-    return
+    count = 0
+    numlist = []
+    while count < 5:
+        current = random.randint(100,200)
+        while current%2 != 0:
+            current = random.randint(100,200)
+        numlist.append(current)
+        count+=1
+    return numlist
 
     # <QUESTION 6>
 
@@ -137,7 +166,9 @@ def five():
 
 
 def six(string):
-    return
+    string = string.lower()
+    result = string.endswith("py")
+    return result
 
     # <QUESTION 7>
 
@@ -162,7 +193,14 @@ def six(string):
 
 
 def seven(a, b, c):
-    return
+    numlist = [a,b,c]
+    numlist.sort()
+    diff = numlist[2] - numlist[1]
+    diff2 = numlist[1] - numlist[0]
+    if diff == diff2:
+        return True
+    else:
+        return False
 
     # <QUESTION 8>
 
